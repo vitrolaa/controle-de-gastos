@@ -4,7 +4,7 @@ import tailwindcss from '@tailwindcss/vite'
 
 // https://vite.dev/config/
 export default defineConfig({
-  base: './', // Compatibilidade universal para hospedagem estática no GitHub Pages
+  base: '/controle-de-gastos/', // Path do repositório no GitHub Pages
   plugins: [
     tailwindcss(),
     react()
