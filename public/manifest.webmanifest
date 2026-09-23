@@ -2,26 +2,28 @@
   "name": "FinControl - Controle de Gastos Mensais",
   "short_name": "FinControl",
   "description": "Aplicação moderna e acessível de Controle de Gastos Mensais com gestão orçamentária e análise gráfica.",
-  "start_url": "/",
+  "id": "/controle-de-gastos/",
+  "start_url": "/controle-de-gastos/",
+  "scope": "/controle-de-gastos/",
   "display": "standalone",
   "orientation": "portrait",
-  "background_color": "#0f172a",
+  "background_color": "#ffffff",
   "theme_color": "#4f46e5",
   "icons": [
     {
-      "src": "/icon-192.png",
+      "src": "/controle-de-gastos/icon-192.png",
       "sizes": "192x192",
       "type": "image/png",
       "purpose": "any"
     },
     {
-      "src": "/icon-512.png",
+      "src": "/controle-de-gastos/icon-512.png",
       "sizes": "512x512",
       "type": "image/png",
       "purpose": "any maskable"
     },
     {
-      "src": "/apple-touch-icon.png",
+      "src": "/controle-de-gastos/apple-touch-icon.png",
       "sizes": "180x180",
       "type": "image/png"
     }

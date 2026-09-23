@@ -1,0 +1,15 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+  <head>
+    <meta charset="utf-8">
+    <title>Redirecionando...</title>
+    <script>
+      sessionStorage.redirect = location.href;
+      location.replace('/controle-de-gastos/');
+    </script>
+    <meta http-equiv="refresh" content="0;URL='/controle-de-gastos/'">
+  </head>
+  <body>
+    <p>Redirecionando para o <a href="/controle-de-gastos/">FinControl</a>...</p>
+  </body>
+</html>
