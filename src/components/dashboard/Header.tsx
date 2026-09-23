@@ -61,7 +61,7 @@ export function Header({
   const years = [2024, 2025, 2026, 2027, 2028]
 
   return (
-    <header className="bg-white border-b border-slate-200/80 sticky top-0 z-30 shadow-xs">
+    <header className="bg-white border-b border-slate-200/80 sticky top-0 z-30 shadow-xs safe-area-header">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-3 sm:py-3.5">
         <div className="flex flex-col lg:flex-row lg:items-center lg:justify-between gap-3 sm:gap-4">
           {/* Logo e Título da Aplicação */}
