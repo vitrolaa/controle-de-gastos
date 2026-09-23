@@ -80,7 +80,7 @@ export function Header({
                       {isSyncing ? (
                         <>
                           <CloudUpload className="w-3 h-3 animate-pulse text-emerald-600" />
-                          <span>A sincronizar</span>
+                          <span>Sincronizando</span>
                         </>
                       ) : (
                         <>
@@ -97,7 +97,7 @@ export function Header({
                   )}
                 </div>
                 <p className="text-xs text-slate-500 hidden sm:block">
-                  Controlo de Gastos Mensais &amp; Sincronização Supabase
+                  Controle de Gastos Mensais &amp; Sincronização Supabase
                 </p>
               </div>
             </div>
@@ -117,7 +117,7 @@ export function Header({
                   type="button"
                   onClick={signOut}
                   className="p-1.5 rounded-lg border border-slate-200 text-rose-600 hover:bg-rose-50"
-                  title="Terminar sessão"
+                  title="Sair da conta"
                 >
                   <LogOut className="w-4 h-4" />
                 </button>
@@ -190,9 +190,9 @@ export function Header({
               type="button"
               onClick={onCurrencyToggle}
               className="hidden sm:inline-flex items-center gap-1 text-xs font-semibold px-2.5 py-2 rounded-xl border border-slate-200 bg-white text-slate-700 hover:bg-slate-50 transition-colors"
-              title="Alternar Moeda (EUR / BRL)"
+              title="Alternar Moeda (BRL / EUR)"
             >
-              {currency === 'EUR' ? '€ Euro' : 'R$ BRL'}
+              {currency === 'BRL' ? 'R$ Real' : '€ Euro'}
             </button>
 
             {/* Configuração Supabase */}
@@ -200,7 +200,7 @@ export function Header({
               type="button"
               onClick={onOpenConfig}
               className="p-2 rounded-xl border border-slate-200 text-slate-500 hover:text-slate-800 hover:bg-slate-50 transition-colors"
-              title={isConfigured ? 'Supabase Conectado (Clique para gerir)' : 'Configurar Chaves Supabase'}
+              title={isConfigured ? 'Supabase Conectado (Clique para gerenciar)' : 'Configurar Chaves Supabase'}
             >
               <Settings2 className="w-4 h-4" />
             </button>
@@ -211,7 +211,7 @@ export function Header({
               size="sm"
               icon={<Banknote className="w-4 h-4 text-emerald-600" />}
               onClick={onOpenBudgetModal}
-              title="Definir o seu salário ou rendimento do mês"
+              title="Definir seu salário ou renda do mês"
             >
               <span className="hidden sm:inline">Definir Salário</span>
               <span className="sm:hidden">Salário</span>
@@ -223,13 +223,13 @@ export function Header({
               size="sm"
               icon={<Plus className="w-4 h-4" />}
               onClick={onOpenNewExpense}
-              title="Registar nova despesa (Tecla N)"
+              title="Registrar nova despesa (Tecla N)"
             >
               <span className="hidden sm:inline">Nova Despesa</span>
               <span className="sm:hidden">Novo</span>
             </Button>
 
-            {/* Utilizador / Login no Desktop */}
+            {/* Usuário / Login no Desktop */}
             <div className="hidden lg:flex items-center pl-2 border-l border-slate-200">
               {user ? (
                 <div className="flex items-center gap-2">
@@ -243,8 +243,8 @@ export function Header({
                     type="button"
                     onClick={signOut}
                     className="p-2 rounded-xl text-slate-400 hover:text-rose-600 hover:bg-rose-50 transition-colors"
-                    title="Terminar Sessão"
-                    aria-label="Terminar sessão"
+                    title="Sair da conta"
+                    aria-label="Sair da conta"
                   >
                     <LogOut className="w-4 h-4" />
                   </button>

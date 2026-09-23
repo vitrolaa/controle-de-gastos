@@ -270,8 +270,8 @@ export function ExpenseList({
                             type="button"
                             onClick={() => onDeleteRequest(expense)}
                             className="p-1.5 rounded-lg text-slate-400 hover:text-rose-600 hover:bg-rose-50 transition-colors focus:ring-2 focus:ring-rose-500"
-                            title="Eliminar despesa"
-                            aria-label={`Eliminar ${expense.description}`}
+                            title="Excluir despesa"
+                            aria-label={`Excluir ${expense.description}`}
                           >
                             <Trash2 className="w-4 h-4" />
                           </button>
@@ -346,7 +346,7 @@ export function ExpenseList({
                         type="button"
                         onClick={() => onDeleteRequest(expense)}
                         className="p-1.5 rounded-lg text-slate-500 hover:text-rose-600 hover:bg-slate-100"
-                        aria-label={`Eliminar ${expense.description}`}
+                        aria-label={`Excluir ${expense.description}`}
                       >
                         <Trash2 className="w-4 h-4" />
                       </button>

@@ -22,12 +22,12 @@ export function CloudSyncBanner({ onOpenAuth, onOpenConfig }: CloudSyncBannerPro
         </div>
         <div className="min-w-0 text-xs sm:text-sm">
           <p className="font-bold text-slate-900">
-            Aceda aos seus gastos no Telemóvel e no Computador
+            Acesse seus gastos no Celular e no Computador
           </p>
           <p className="text-slate-600 text-xs mt-0.5 truncate sm:whitespace-normal">
             {isConfigured
-              ? 'Inicie sessão com a sua conta Supabase para sincronização em nuvem em tempo real.'
-              : 'Conecte o seu projeto Supabase gratuito para salvar os dados na nuvem com PostgreSQL.'}
+              ? 'Entre com sua conta Supabase para sincronização na nuvem em tempo real.'
+              : 'Conecte seu projeto Supabase gratuito para salvar os dados na nuvem com PostgreSQL.'}
           </p>
         </div>
       </div>
@@ -39,7 +39,7 @@ export function CloudSyncBanner({ onOpenAuth, onOpenConfig }: CloudSyncBannerPro
             onClick={onOpenAuth}
             className="text-xs font-semibold px-3 py-1.5 rounded-xl bg-indigo-600 hover:bg-indigo-700 text-white flex items-center gap-1.5 transition-all shadow-xs"
           >
-            <span>Iniciar Sessão</span>
+            <span>Entrar</span>
             <ArrowRight className="w-3.5 h-3.5" />
           </button>
         ) : (

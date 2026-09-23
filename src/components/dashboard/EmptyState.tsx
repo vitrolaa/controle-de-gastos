@@ -40,10 +40,10 @@ export function EmptyState({ isFiltered = false, onAction, onClearFilters }: Emp
         <Receipt className="w-7 h-7" />
       </div>
       <h3 className="text-base sm:text-lg font-bold text-slate-800">
-        Nenhum gasto registado neste mês
+        Nenhum gasto registrado neste mês
       </h3>
       <p className="text-sm text-slate-500 max-w-sm mt-1 mb-6">
-        Comece adicionando uma despesa para acompanhar o seu orçamento e analisar gráficos detalhados.
+        Comece adicionando uma despesa para acompanhar seu orçamento e analisar gráficos detalhados.
       </p>
       <Button
         variant="primary"
@@ -51,7 +51,7 @@ export function EmptyState({ isFiltered = false, onAction, onClearFilters }: Emp
         icon={<Plus className="w-4 h-4" />}
         onClick={onAction}
       >
-        Registar Primeira Despesa
+        Registrar Primeira Despesa
       </Button>
     </div>
   )

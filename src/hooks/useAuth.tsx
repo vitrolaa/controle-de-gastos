@@ -108,7 +108,7 @@ export function AuthProvider({ children }: { children: ReactNode }) {
         })
         if (error) {
           if (error.message.includes('already registered')) {
-            return { error: 'Este email já se encontra registado. Inicie sessão em vez disso.' }
+            return { error: 'Este e-mail já está cadastrado. Faça login para continuar.' }
           }
           return { error: error.message }
         }
@@ -119,7 +119,7 @@ export function AuthProvider({ children }: { children: ReactNode }) {
         }
         return { error: null, confirmationRequired }
       } catch (err: unknown) {
-        const msg = err instanceof Error ? err.message : 'Falha ao registar utilizador no Supabase'
+        const msg = err instanceof Error ? err.message : 'Falha ao cadastrar usuário no Supabase'
         return { error: msg }
       }
     },
@@ -169,7 +169,7 @@ export function AuthProvider({ children }: { children: ReactNode }) {
 export function useAuth(): AuthContextValue {
   const ctx = useContext(AuthContext)
   if (!ctx) {
-    throw new Error('useAuth deve ser utilizado dentro de um AuthProvider')
+    throw new Error('useAuth deve ser usado dentro de um AuthProvider')
   }
   return ctx
 }

@@ -112,11 +112,11 @@ export function ExpenseFormModal({
     <Modal
       isOpen={isOpen}
       onClose={onClose}
-      title={editingExpense ? 'Editar Despesa' : 'Registar Nova Despesa'}
+      title={editingExpense ? 'Editar Despesa' : 'Registrar Nova Despesa'}
       description={
         editingExpense
           ? 'Atualize os dados da despesa selecionada'
-          : 'Preencha os dados do gasto para manter o seu orçamento sob controlo'
+          : 'Preencha os dados do gasto para manter seu orçamento sob controle'
       }
       maxWidth="md"
     >
@@ -124,7 +124,7 @@ export function ExpenseFormModal({
         {/* Campo: Descrição */}
         <Input
           label="Descrição do Gasto"
-          placeholder="Ex: Supermercado, Aluguer, Cinema..."
+          placeholder="Ex: Supermercado, Aluguel, Cinema..."
           value={description}
           onChange={(e) => {
             setDescription(e.target.value)
@@ -196,7 +196,7 @@ export function ExpenseFormModal({
               <div>
                 <span className="block text-xs font-bold text-slate-900">Gasto Fixo</span>
                 <span className="block text-[11px] text-slate-500 mt-0.5">
-                  Recorrente (renda, contas)
+                  Recorrente (aluguel, contas)
                 </span>
               </div>
             </button>

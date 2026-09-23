@@ -15,8 +15,8 @@ export function generateSeedExpenses(): Expense[] {
   return [
     {
       id: 'seed-1',
-      description: 'Renda / Aluguer do Apartamento',
-      amount: 650.0,
+      description: 'Aluguel do Apartamento',
+      amount: 1650.0,
       date: `${currentYear}-${currentMonth}-01`,
       category: 'housing',
       type: 'fixed',
@@ -24,8 +24,8 @@ export function generateSeedExpenses(): Expense[] {
     },
     {
       id: 'seed-2',
-      description: 'Supermercado Quinzenal',
-      amount: 142.8,
+      description: 'Supermercado Mensal',
+      amount: 450.8,
       date: `${currentYear}-${currentMonth}-03`,
       category: 'food',
       type: 'variable',
@@ -33,8 +33,8 @@ export function generateSeedExpenses(): Expense[] {
     },
     {
       id: 'seed-3',
-      description: 'Fatura de Eletricidade e Água',
-      amount: 85.5,
+      description: 'Conta de Luz e Água',
+      amount: 185.5,
       date: `${currentYear}-${currentMonth}-05`,
       category: 'bills',
       type: 'fixed',
@@ -42,8 +42,8 @@ export function generateSeedExpenses(): Expense[] {
     },
     {
       id: 'seed-4',
-      description: 'Passe Navegante / Transporte Mensal',
-      amount: 40.0,
+      description: 'Transporte / Metrô Mensal',
+      amount: 120.0,
       date: `${currentYear}-${currentMonth}-06`,
       category: 'transport',
       type: 'fixed',
@@ -52,7 +52,7 @@ export function generateSeedExpenses(): Expense[] {
     {
       id: 'seed-5',
       description: 'Jantar Restaurante Italiano',
-      amount: 54.0,
+      amount: 110.0,
       date: `${currentYear}-${currentMonth}-08`,
       category: 'food',
       type: 'variable',
@@ -60,8 +60,8 @@ export function generateSeedExpenses(): Expense[] {
     },
     {
       id: 'seed-6',
-      description: 'Subscrição Internet Fibra + TV',
-      amount: 34.9,
+      description: 'Assinatura Internet Fibra + Streaming',
+      amount: 99.9,
       date: `${currentYear}-${currentMonth}-10`,
       category: 'bills',
       type: 'fixed',
@@ -70,7 +70,7 @@ export function generateSeedExpenses(): Expense[] {
     {
       id: 'seed-7',
       description: 'Farmácia & Vitaminas',
-      amount: 28.5,
+      amount: 68.5,
       date: `${currentYear}-${currentMonth}-12`,
       category: 'health',
       type: 'variable',
@@ -78,8 +78,8 @@ export function generateSeedExpenses(): Expense[] {
     },
     {
       id: 'seed-8',
-      description: 'Cinema e Pipocas com Amigos',
-      amount: 22.0,
+      description: 'Cinema e Pipoca com Amigos',
+      amount: 55.0,
       date: `${currentYear}-${currentMonth}-14`,
       category: 'leisure',
       type: 'variable',
@@ -96,8 +96,8 @@ export function generateSeedExpenses(): Expense[] {
     },
     {
       id: 'seed-10',
-      description: 'Combustível Posto Galp',
-      amount: 60.0,
+      description: 'Combustível / Gasolina Posto',
+      amount: 150.0,
       date: `${currentYear}-${currentMonth}-17`,
       category: 'transport',
       type: 'variable',
@@ -106,8 +106,8 @@ export function generateSeedExpenses(): Expense[] {
     // Despesas do mês anterior para comparação
     {
       id: 'seed-11',
-      description: 'Renda do Apartamento',
-      amount: 650.0,
+      description: 'Aluguel do Apartamento',
+      amount: 1650.0,
       date: `${prevYearNum}-${prevMonth}-01`,
       category: 'housing',
       type: 'fixed',
@@ -115,8 +115,8 @@ export function generateSeedExpenses(): Expense[] {
     },
     {
       id: 'seed-12',
-      description: 'Compras Supermercado',
-      amount: 290.0,
+      description: 'Compras de Supermercado',
+      amount: 520.0,
       date: `${prevYearNum}-${prevMonth}-05`,
       category: 'food',
       type: 'variable',
@@ -124,8 +124,8 @@ export function generateSeedExpenses(): Expense[] {
     },
     {
       id: 'seed-13',
-      description: 'Eletricidade e Gás',
-      amount: 92.0,
+      description: 'Conta de Luz e Gás',
+      amount: 195.0,
       date: `${prevYearNum}-${prevMonth}-10`,
       category: 'bills',
       type: 'fixed',
@@ -159,7 +159,7 @@ export function saveExpensesToStorage(expenses: Expense[]): void {
   try {
     localStorage.setItem(EXPENSES_STORAGE_KEY, JSON.stringify(expenses))
   } catch (error) {
-    console.error('Erro ao gravar despesas no localStorage:', error)
+    console.error('Erro ao salvar despesas no localStorage:', error)
   }
 }
 
@@ -180,16 +180,16 @@ export function saveBudgetsToStorage(budgets: MonthlyBudgetMap): void {
   try {
     localStorage.setItem(BUDGETS_STORAGE_KEY, JSON.stringify(budgets))
   } catch (error) {
-    console.error('Erro ao gravar orçamentos no localStorage:', error)
+    console.error('Erro ao salvar orçamentos no localStorage:', error)
   }
 }
 
 export function loadCurrencyPreference(): 'EUR' | 'BRL' {
   try {
     const val = localStorage.getItem(CURRENCY_STORAGE_KEY)
-    return val === 'BRL' ? 'BRL' : 'EUR'
+    return val === 'EUR' ? 'EUR' : 'BRL'
   } catch {
-    return 'EUR'
+    return 'BRL'
   }
 }
 
@@ -197,6 +197,6 @@ export function saveCurrencyPreference(currency: 'EUR' | 'BRL'): void {
   try {
     localStorage.setItem(CURRENCY_STORAGE_KEY, currency)
   } catch (error) {
-    console.error('Erro ao gravar moeda no localStorage:', error)
+    console.error('Erro ao salvar moeda no localStorage:', error)
   }
 }

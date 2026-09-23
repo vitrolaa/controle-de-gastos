@@ -98,16 +98,16 @@ export function useExpenses() {
     }
   }, [user, isConfigured])
 
-  // Efeito para carregar dados ao fazer login ou alterar utilizador
+  // Efeito para carregar dados ao fazer login ou alterar usuário
   useEffect(() => {
-    // Ao mudar de utilizador ou logar, limpa o estado imediatamente
+    // Ao mudar de usuário ou logar, limpa o estado imediatamente
     setExpenses([])
     setBudgets({})
 
     if (user && isConfigured) {
       fetchCloudData()
 
-      // Subscrição em Tempo Real (Supabase Realtime)
+      // Inscrição em Tempo Real (Supabase Realtime)
       const channel = supabase
         .channel(`user-sync-${user.id}`)
         .on(
@@ -227,7 +227,7 @@ export function useExpenses() {
           createdAt: new Date().toISOString(),
         }
         setExpenses((prev) => [newExpense, ...prev])
-        toast.success('Despesa adicionada', `"${data.description}" registada localmente.`)
+        toast.success('Despesa adicionada', `"${data.description}" registrada localmente.`)
       }
     },
     [user, isConfigured, toast]
@@ -291,11 +291,11 @@ export function useExpenses() {
             .eq('user_id', user.id)
 
           if (error) {
-            toast.error('Erro ao eliminar na nuvem', error.message)
+            toast.error('Erro ao excluir na nuvem', error.message)
             fetchCloudData()
           } else {
             toast.info(
-              'Despesa eliminada',
+              'Despesa excluída',
               target ? `"${target.description}" removida da nuvem.` : 'Removida.'
             )
           }
@@ -308,7 +308,7 @@ export function useExpenses() {
         }
       } else {
         toast.info(
-          'Despesa eliminada',
+          'Despesa excluída',
           target ? `"${target.description}" foi removida.` : 'A despesa foi removida.'
         )
       }
@@ -344,7 +344,7 @@ export function useExpenses() {
                 'Execute o script SQL no painel do Supabase para criar as tabelas "expenses" e "budgets".'
               )
             } else {
-              toast.error('Erro ao guardar teto na nuvem', error.message)
+              toast.error('Erro ao salvar teto na nuvem', error.message)
             }
           } else {
             toast.success('Orçamento sincronizado', `Teto mensal salvo no Supabase.`)

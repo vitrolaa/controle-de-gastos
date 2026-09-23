@@ -57,7 +57,7 @@ export function BudgetModal({
       isOpen={isOpen}
       onClose={onClose}
       title="Salário / Renda Mensal"
-      description={`Defina o seu rendimento disponível para ${getMonthYearLabel(year, month)}`}
+      description={`Defina sua renda disponível para ${getMonthYearLabel(year, month)}`}
       maxWidth="sm"
     >
       <form onSubmit={handleSubmit} className="space-y-4.5">
@@ -83,7 +83,7 @@ export function BudgetModal({
           }}
           placeholder="Ex: 2500.00"
           error={error || undefined}
-          hint="Informe o seu salário mensal ou digite 0 para remover."
+          hint="Informe seu salário mensal ou digite 0 para remover."
           leftIcon={<Banknote className="w-4 h-4" />}
           autoFocus
         />
@@ -113,7 +113,7 @@ export function BudgetModal({
             Cancelar
           </Button>
           <Button type="submit" variant="primary">
-            Guardar Salário
+            Salvar Salário
           </Button>
         </div>
       </form>

@@ -37,7 +37,7 @@ export function AuthModal({ isOpen, onClose, onOpenConfig }: AuthModalProps) {
     setSuccessMessage(null)
 
     if (!email.trim() || !email.includes('@')) {
-      setErrorMessage('Por favor, introduza um endereço de email válido.')
+      setErrorMessage('Por favor, informe um endereço de e-mail válido.')
       return
     }
 
@@ -62,10 +62,10 @@ export function AuthModal({ isOpen, onClose, onOpenConfig }: AuthModalProps) {
           setErrorMessage(error)
         } else if (confirmationRequired) {
           setSuccessMessage(
-            'Conta criada com sucesso! Enviámos um email de confirmação para validar a sua conta antes de iniciar sessão.'
+            'Conta criada com sucesso! Enviamos um e-mail de confirmação para validar sua conta antes de fazer login.'
           )
         } else {
-          setSuccessMessage('Conta criada com sucesso! Iniciando sessão...')
+          setSuccessMessage('Conta criada com sucesso! Entrando...')
           setTimeout(() => onClose(), 1200)
         }
       }
@@ -83,8 +83,8 @@ export function AuthModal({ isOpen, onClose, onOpenConfig }: AuthModalProps) {
     <Modal
       isOpen={isOpen}
       onClose={onClose}
-      title={mode === 'login' ? 'Iniciar Sessão' : 'Criar Nova Conta'}
-      description="Sincronize os seus gastos entre o computador e o telemóvel na nuvem"
+      title={mode === 'login' ? 'Entrar' : 'Criar Nova Conta'}
+      description="Sincronize seus gastos entre o computador e o celular na nuvem"
       maxWidth="md"
     >
       <div className="space-y-4">
@@ -110,7 +110,7 @@ export function AuthModal({ isOpen, onClose, onOpenConfig }: AuthModalProps) {
           </div>
         )}
 
-        {/* Abas Alternadoras: Login / Registo */}
+        {/* Abas Alternadoras: Login / Cadastro */}
         <div className="flex bg-slate-100 p-1 rounded-xl">
           <button
             type="button"
@@ -125,7 +125,7 @@ export function AuthModal({ isOpen, onClose, onOpenConfig }: AuthModalProps) {
                 : 'text-slate-600 hover:text-slate-900'
             }`}
           >
-            Iniciar Sessão
+            Entrar
           </button>
           <button
             type="button"
@@ -200,7 +200,7 @@ export function AuthModal({ isOpen, onClose, onOpenConfig }: AuthModalProps) {
             disabled={!isConfigured}
             icon={<CloudCheck className="w-4 h-4" />}
           >
-            {mode === 'login' ? 'Entrar com Supabase' : 'Registar Conta Gratuita'}
+            {mode === 'login' ? 'Entrar com Supabase' : 'Criar Conta Gratuita'}
           </Button>
         </form>
 

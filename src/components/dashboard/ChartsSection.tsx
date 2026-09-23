@@ -165,7 +165,7 @@ export function ChartsSection({
         {!hasData ? (
           <div className="flex-1 min-h-[260px] flex flex-col items-center justify-center text-center p-6 text-slate-400">
             <Inbox className="w-10 h-10 stroke-[1.5] mb-2" />
-            <p className="text-sm font-medium text-slate-600">Sem atividade registada</p>
+            <p className="text-sm font-medium text-slate-600">Sem atividade registrada</p>
             <p className="text-xs text-slate-400 max-w-xs mt-0.5">
               O gráfico de barras mostrará a dispersão diária das suas despesas fixas e variáveis.
             </p>

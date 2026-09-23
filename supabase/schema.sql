@@ -1,5 +1,5 @@
 -- ==============================================================================
--- ESQUEMA SQL PARA SUPABASE - FINCONTROL (CONTROLO DE GASTOS MENSAIS)
+-- ESQUEMA SQL PARA SUPABASE - FINCONTROL (CONTROLE DE GASTOS MENSAIS)
 -- ==============================================================================
 -- Execute este script no "SQL Editor" do painel do seu projeto Supabase:
 -- https://supabase.com/dashboard/project/_/sql
@@ -35,49 +35,49 @@ create index if not exists idx_budgets_user_month on public.budgets(user_id, mon
 alter table public.expenses enable row level security;
 alter table public.budgets enable row level security;
 
--- 5. Políticas de Segurança RLS para 'expenses' (Isolamento Total por Utilizador)
-drop policy if exists "Utilizadores podem consultar apenas as suas próprias despesas" on public.expenses;
-create policy "Utilizadores podem consultar apenas as suas próprias despesas"
+-- 5. Políticas de Segurança RLS para 'expenses' (Isolamento Total por Usuário)
+drop policy if exists "Usuários podem consultar apenas as suas próprias despesas" on public.expenses;
+create policy "Usuários podem consultar apenas as suas próprias despesas"
     on public.expenses for select
     using (auth.uid() = user_id);
 
-drop policy if exists "Utilizadores podem criar despesas associadas a si próprios" on public.expenses;
-create policy "Utilizadores podem criar despesas associadas a si próprios"
+drop policy if exists "Usuários podem criar despesas associadas a si próprios" on public.expenses;
+create policy "Usuários podem criar despesas associadas a si próprios"
     on public.expenses for insert
     with check (auth.uid() = user_id);
 
-drop policy if exists "Utilizadores podem atualizar as suas próprias despesas" on public.expenses;
-create policy "Utilizadores podem atualizar as suas próprias despesas"
+drop policy if exists "Usuários podem atualizar as suas próprias despesas" on public.expenses;
+create policy "Usuários podem atualizar as suas próprias despesas"
     on public.expenses for update
     using (auth.uid() = user_id);
 
-drop policy if exists "Utilizadores podem eliminar as suas próprias despesas" on public.expenses;
-create policy "Utilizadores podem eliminar as suas próprias despesas"
+drop policy if exists "Usuários podem excluir as suas próprias despesas" on public.expenses;
+create policy "Usuários podem excluir as suas próprias despesas"
     on public.expenses for delete
     using (auth.uid() = user_id);
 
 -- 6. Políticas de Segurança RLS para 'budgets'
-drop policy if exists "Utilizadores podem consultar os seus próprios orçamentos" on public.budgets;
-create policy "Utilizadores podem consultar os seus próprios orçamentos"
+drop policy if exists "Usuários podem consultar os seus próprios orçamentos" on public.budgets;
+create policy "Usuários podem consultar os seus próprios orçamentos"
     on public.budgets for select
     using (auth.uid() = user_id);
 
-drop policy if exists "Utilizadores podem inserir os seus próprios orçamentos" on public.budgets;
-create policy "Utilizadores podem inserir os seus próprios orçamentos"
+drop policy if exists "Usuários podem inserir os seus próprios orçamentos" on public.budgets;
+create policy "Usuários podem inserir os seus próprios orçamentos"
     on public.budgets for insert
     with check (auth.uid() = user_id);
 
-drop policy if exists "Utilizadores podem atualizar os seus próprios orçamentos" on public.budgets;
-create policy "Utilizadores podem atualizar os seus próprios orçamentos"
+drop policy if exists "Usuários podem atualizar os seus próprios orçamentos" on public.budgets;
+create policy "Usuários podem atualizar os seus próprios orçamentos"
     on public.budgets for update
     using (auth.uid() = user_id);
 
-drop policy if exists "Utilizadores podem eliminar os seus próprios orçamentos" on public.budgets;
-create policy "Utilizadores podem eliminar os seus próprios orçamentos"
+drop policy if exists "Usuários podem excluir os seus próprios orçamentos" on public.budgets;
+create policy "Usuários podem excluir os seus próprios orçamentos"
     on public.budgets for delete
     using (auth.uid() = user_id);
 
 -- 7. Habilitação de Replicação em Tempo Real (Realtime)
--- Permite que alterações no telemóvel atualizem instantaneamente o ecrã do PC
+-- Permite que alterações no celular atualizem instantaneamente a tela do PC
 alter publication supabase_realtime add table public.expenses;
 alter publication supabase_realtime add table public.budgets;

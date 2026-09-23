@@ -55,37 +55,37 @@ alter table public.expenses enable row level security;
 alter table public.budgets enable row level security;
 
 -- 5. Políticas RLS para 'expenses'
-drop policy if exists "Utilizadores podem consultar apenas as suas próprias despesas" on public.expenses;
-create policy "Utilizadores podem consultar apenas as suas próprias despesas"
+drop policy if exists "Usuários podem consultar apenas as suas próprias despesas" on public.expenses;
+create policy "Usuários podem consultar apenas as suas próprias despesas"
     on public.expenses for select using (auth.uid() = user_id);
 
-drop policy if exists "Utilizadores podem criar despesas associadas a si próprios" on public.expenses;
-create policy "Utilizadores podem criar despesas associadas a si próprios"
+drop policy if exists "Usuários podem criar despesas associadas a si próprios" on public.expenses;
+create policy "Usuários podem criar despesas associadas a si próprios"
     on public.expenses for insert with check (auth.uid() = user_id);
 
-drop policy if exists "Utilizadores podem atualizar as suas próprias despesas" on public.expenses;
-create policy "Utilizadores podem atualizar as suas próprias despesas"
+drop policy if exists "Usuários podem atualizar as suas próprias despesas" on public.expenses;
+create policy "Usuários podem atualizar as suas próprias despesas"
     on public.expenses for update using (auth.uid() = user_id);
 
-drop policy if exists "Utilizadores podem eliminar as suas próprias despesas" on public.expenses;
-create policy "Utilizadores podem eliminar as suas próprias despesas"
+drop policy if exists "Usuários podem excluir as suas próprias despesas" on public.expenses;
+create policy "Usuários podem excluir as suas próprias despesas"
     on public.expenses for delete using (auth.uid() = user_id);
 
 -- 6. Políticas RLS para 'budgets'
-drop policy if exists "Utilizadores podem consultar os seus próprios orçamentos" on public.budgets;
-create policy "Utilizadores podem consultar os seus próprios orçamentos"
+drop policy if exists "Usuários podem consultar os seus próprios orçamentos" on public.budgets;
+create policy "Usuários podem consultar os seus próprios orçamentos"
     on public.budgets for select using (auth.uid() = user_id);
 
-drop policy if exists "Utilizadores podem inserir os seus próprios orçamentos" on public.budgets;
-create policy "Utilizadores podem inserir os seus próprios orçamentos"
+drop policy if exists "Usuários podem inserir os seus próprios orçamentos" on public.budgets;
+create policy "Usuários podem inserir os seus próprios orçamentos"
     on public.budgets for insert with check (auth.uid() = user_id);
 
-drop policy if exists "Utilizadores podem atualizar os seus próprios orçamentos" on public.budgets;
-create policy "Utilizadores podem atualizar os seus próprios orçamentos"
+drop policy if exists "Usuários podem atualizar os seus próprios orçamentos" on public.budgets;
+create policy "Usuários podem atualizar os seus próprios orçamentos"
     on public.budgets for update using (auth.uid() = user_id);
 
-drop policy if exists "Utilizadores podem eliminar os seus próprios orçamentos" on public.budgets;
-create policy "Utilizadores podem eliminar os seus próprios orçamentos"
+drop policy if exists "Usuários podem excluir os seus próprios orçamentos" on public.budgets;
+create policy "Usuários podem excluir os seus próprios orçamentos"
     on public.budgets for delete using (auth.uid() = user_id);
 
 -- 7. Replicação em Tempo Real (Realtime)
@@ -116,7 +116,7 @@ export function SupabaseConfigModal({ isOpen, onClose }: SupabaseConfigModalProp
   }
 
   const handleClear = () => {
-    if (confirm('Tem a certeza que deseja limpar as credenciais salvas do Supabase?')) {
+    if (confirm('Tem certeza de que deseja limpar as credenciais salvas do Supabase?')) {
       clearSupabaseCredentials()
       onClose()
     }
@@ -179,7 +179,7 @@ export function SupabaseConfigModal({ isOpen, onClose }: SupabaseConfigModalProp
                 <p className="font-bold">Aviso sobre o erro "Could not find the table":</p>
                 <p className="mt-0.5 text-amber-800">
                   Esse erro ocorre quando as tabelas ainda não foram criadas no banco de dados.
-                  Aceda à aba <strong>"Script SQL das Tabelas"</strong> acima, copie o código e execute no SQL Editor do Supabase.
+                  Acesse a aba <strong>"Script SQL das Tabelas"</strong> acima, copie o código e execute no SQL Editor do Supabase.
                 </p>
               </div>
             </div>
@@ -198,7 +198,7 @@ export function SupabaseConfigModal({ isOpen, onClose }: SupabaseConfigModalProp
                   >
                     supabase.com/dashboard <ExternalLink className="w-3 h-3" />
                   </a>
-                  , aceda a <strong>Project Settings &gt; API</strong>.
+                  , acesse <strong>Project Settings &gt; API</strong>.
                 </p>
               </div>
             </div>
@@ -255,7 +255,7 @@ export function SupabaseConfigModal({ isOpen, onClose }: SupabaseConfigModalProp
                   Cancelar
                 </Button>
                 <Button type="submit" variant="primary">
-                  Guardar e Conectar
+                  Salvar e Conectar
                 </Button>
               </div>
             </div>

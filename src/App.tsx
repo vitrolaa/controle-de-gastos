@@ -192,21 +192,21 @@ function ExpenseApp() {
         onClose={() => setIsConfigOpen(false)}
       />
 
-      {/* Diálogo de Confirmação para Eliminação */}
+      {/* Diálogo de Confirmação para Exclusão */}
       <ConfirmDialog
         isOpen={deleteCandidate !== null}
         onClose={() => setDeleteCandidate(null)}
         onConfirm={handleConfirmDelete}
-        title="Eliminar Despesa?"
+        title="Excluir Despesa?"
         message={
           deleteCandidate
-            ? `Tem a certeza que deseja eliminar "${deleteCandidate.description}" no valor de ${formatCurrency(
+            ? `Tem certeza de que deseja excluir "${deleteCandidate.description}" no valor de ${formatCurrency(
                 deleteCandidate.amount,
                 currency
               )}? Esta ação não pode ser desfeita.`
-            : 'Tem a certeza que deseja eliminar esta despesa?'
+            : 'Tem certeza de que deseja excluir esta despesa?'
         }
-        confirmText="Sim, Eliminar"
+        confirmText="Sim, Excluir"
         cancelText="Cancelar"
         variant="danger"
       />

@@ -78,7 +78,7 @@ export function SummaryCards({ summary, currency, onOpenBudgetModal }: SummaryCa
                 {formatCurrency(summary.budget, currency)}
               </span>
               <p className="text-[11px] text-emerald-700 font-medium mt-1">
-                Rendimento líquido mensal
+                Renda líquida mensal
               </p>
             </div>
           ) : (
@@ -120,7 +120,7 @@ export function SummaryCards({ summary, currency, onOpenBudgetModal }: SummaryCa
               {formatCurrency(summary.total, currency)}
             </span>
             <p className="text-[11px] text-slate-500 font-medium mt-1">
-              {summary.expenseCount} {summary.expenseCount === 1 ? 'gasto registado' : 'gastos registados'}
+              {summary.expenseCount} {summary.expenseCount === 1 ? 'gasto registrado' : 'gastos registrados'}
             </p>
           </div>
         </div>

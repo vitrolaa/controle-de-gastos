@@ -20,7 +20,7 @@ export function Modal({
 }: ModalProps) {
   const modalRef = useRef<HTMLDivElement>(null)
 
-  // Tratamento da tecla Esc para fechar (Heurística de Liberdade e Controlo do Usuário)
+  // Tratamento da tecla Esc para fechar (Heurística de Liberdade e Controle do Usuário)
   useEffect(() => {
     const handleKeyDown = (e: KeyboardEvent) => {
       if (e.key === 'Escape' && isOpen) {

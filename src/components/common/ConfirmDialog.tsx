@@ -20,7 +20,7 @@ export function ConfirmDialog({
   onConfirm,
   title,
   message,
-  confirmText = 'Eliminar',
+  confirmText = 'Excluir',
   cancelText = 'Cancelar',
   variant = 'danger',
   isLoading = false,

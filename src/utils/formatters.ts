@@ -3,7 +3,7 @@ import { MONTH_NAMES } from '../constants/categories'
 /**
  * Formata um valor numérico para a moeda selecionada (padrão EUR/BRL amigável).
  */
-export function formatCurrency(amount: number, currency: 'EUR' | 'BRL' = 'EUR'): string {
+export function formatCurrency(amount: number, currency: 'EUR' | 'BRL' = 'BRL'): string {
   const locale = currency === 'EUR' ? 'pt-PT' : 'pt-BR'
   return new Intl.NumberFormat(locale, {
     style: 'currency',
